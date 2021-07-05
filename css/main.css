@@ -22,3 +22,48 @@ h1, h2 {
   text-align: center;
 }
 
+.graphic {
+  margin : 1em auto;
+  width: 30%;
+  display: block;
+}
+
+.star-point,
+.outer-circle  {
+  opacity: 0;
+}
+
+.inner-circle {
+  stroke-opacity: 0;
+}
+
+.outer-circle {
+
+}
+
+@media screen and (min-width: 30em) {
+  .inner-circle {
+    stroke-opacity: 1;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .star-point,
+  .outer-circle  {
+    opacity: 1;
+  }
+
+  .inner-circle {
+    stroke-opacity: 0;
+  }
+
+  .star {
+    stroke-width: 8;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .star-point {
+    opacity: 1;
+  }
+}
