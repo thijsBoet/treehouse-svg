@@ -17,10 +17,71 @@ svg {
   Keyframes
 --------------------------- */
 
+@keyframes slide {
+  50% {
+    transform: translate3d(0, -10px, 0)
+  }
+  80% {
+    transform: translate3d(0, 10px, 0)
+  }
+  100% {
+    transform: translate3d(0, 0, 0)
+  }
+}
 
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15) rotate(-5deg);
+    opacity: 1;
+    fill: #fdf097;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes offset {
+  60% {
+    stroke-opacity: translate3d(0, -10px, 0)
+  }
+  100% {
+    stroke-opacity: translate3d(0, 0, 0)
+  }
+}
 
 /* --------------------------
   SVG Styles
 --------------------------- */
 
 
+.star *{
+  transform-origin: 50% 50%;
+}
+
+.star-bg {
+  stroke-opacity: 0;
+  stroke-dasharray: 815;
+  stroke-dashoffset: 815;
+  animation: offset 0.8s 2.2s linear forwards;
+}
+
+.star {
+  transform: translate3d(0,180px,0);
+  animation: slide 0.5s forwards,
+             grow 0.6s ease-out forwards;
+}
+
+.star:nth-of-type(1) {
+  animation-delay: 0.5s, 1.8s;
+}
+
+.star:nth-of-type(2) {
+  animation-delay: 0s, 1.5s;
+}
+
+.star:nth-of-type(3) {
+  animation-delay: 0.8s, 2s;
+}
